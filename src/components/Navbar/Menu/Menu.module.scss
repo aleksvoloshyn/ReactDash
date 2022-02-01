@@ -1,0 +1,33 @@
+@import './../../../styles/shared.scss';
+
+.menuList {
+  padding-left: 0;
+}
+.link {
+  display: flex;
+  color: $primary-color;
+  opacity: 0.5;
+}
+
+.activeLink {
+  display: flex;
+  color: $mainAccent-color;
+  fill: $mainAccent-color;
+}
+
+.menuList__item {
+  margin-bottom: 30px;
+
+  .menuList__item__logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+  }
+
+  .menuList__item__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.4;
+    text-transform: capitalize;
+  }
+}

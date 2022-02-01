@@ -1,14 +1,12 @@
-import Container from '../Container/Container'
-
+import Logoandcompany from './Logoandcompany/Logoandcompany'
+import Menu from './Menu'
+import s from './Navbar.module.scss'
 const Navbar = () => {
   return (
-    <>
-      <Container>
-        {' '}
-        <h2>This is navbar</h2>
-        <hr />
-      </Container>
-    </>
+    <nav className={s.navbar}>
+      <Logoandcompany company="Base" />
+      <Menu />
+    </nav>
   )
 }
 

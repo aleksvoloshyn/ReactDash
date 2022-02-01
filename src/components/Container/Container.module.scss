@@ -1,9 +1,10 @@
 @import './../../styles/shared.scss';
 
 .container {
-  width: 80%;
+  // width: 100%;
+  width: 1200px;
   margin: 0 auto;
-  border: 1px solid salmon;
+  outline: 1px solid darkgrey;
   // max-width: $mobile;
   // margin-left: auto;
   // margin-right: auto;
