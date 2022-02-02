@@ -1,4 +1,5 @@
 import { NavLink, Link } from 'react-router-dom'
+
 import sprite from '../../../images/svg/sprite.svg'
 import s from './Menu.module.scss'
 
@@ -10,11 +11,13 @@ const menuItems = [
   { id: 5, title: 'calendar' },
   { id: 6, title: 'messages' },
   { id: 7, title: 'notification' },
-  { id: 8, title: 'setting' },
+  { id: 8, title: 'todolist' },
+  { id: 9, title: 'forms' },
+  { id: 10, title: 'pictures' },
+  { id: 11, title: 'setting' },
 ]
 
 const Menu = () => {
-  let activeClassName = 'underline'
   return (
     <div className={s.menu}>
       <ul className={s.menuList}>

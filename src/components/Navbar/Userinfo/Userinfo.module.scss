@@ -1,0 +1,33 @@
+.userInfo {
+  display: flex;
+
+  align-items: center;
+  height: 43px;
+}
+
+.userInfo__avatar {
+  margin-right: 10px;
+  //   background-color: #ffc7d4;
+}
+
+.userInfo__titles {
+  margin-right: 28px;
+  width: 68px;
+  height: 31px;
+}
+
+.userInfo__titles__name {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.userInfo__titles__type {
+  font-size: 10px;
+  line-height: 1.3;
+  opacity: 0.5;
+}
+
+.userInfo__logout {
+  opacity: 0.5;
+}

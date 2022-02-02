@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import sprite from '../../../images/svg/sprite.svg'
 import s from './Logoandcompany.module.scss'
 

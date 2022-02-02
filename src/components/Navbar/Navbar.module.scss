@@ -1,5 +1,8 @@
 .navbar {
-  width: 218px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // width: 218px;
   //   border: 1px solid skyblue;
   padding-top: 50px;
   padding-bottom: 30px;
