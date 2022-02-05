@@ -1,0 +1,88 @@
+.signupform {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 448px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.signupform__header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.menuList__item__logo {
+}
+
+.signupform__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.socialButton {
+  width: 164px;
+  height: 50px;
+  &:first-child {
+    margin-right: 22px;
+  }
+}
+
+.temporaryButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.signupform__header__title {
+  margin-bottom: 60px;
+}
+
+.devider {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+  .devider__text {
+    &:before,
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+      width: 100%;
+      height: 2px;
+      background: #f7f7f8;
+      border: solid #fff;
+      border-width: 0 50px;
+    }
+    &:before {
+      margin-left: -65%;
+    }
+    &:after {
+      margin-right: -100%;
+    }
+  }
+}
+
+.createAccountButton {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.loginText {
+  display: flex;
+  justify-content: center;
+}
+.loginText__redirect {
+  cursor: pointer;
+  color: blue;
+  margin-left: 10px;
+}
+
+.signupform__footer {
+  display: flex;
+  justify-content: center;
+}

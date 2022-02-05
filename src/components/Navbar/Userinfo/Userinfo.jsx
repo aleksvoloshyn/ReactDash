@@ -1,7 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import avataaars from '../../../images/avataaars.png'
 import s from './Userinfo.module.scss'
 
 const Userinfo = ({ userName = 'Alex ', accountType = 'Premium Account' }) => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('./')
+  }
   return (
     <div className={s.userInfo}>
       <div className={s.userInfo__avatar}>
@@ -12,7 +18,7 @@ const Userinfo = ({ userName = 'Alex ', accountType = 'Premium Account' }) => {
         <h3 className={s.userInfo__titles__type}>{accountType}</h3>
       </div>
       <div className={s.userInfo__logout}>
-        <a href="./dashboard">
+        <div onClick={handleClick} className={s.logoutIcon}>
           {' '}
           <svg
             width="18"
@@ -26,7 +32,7 @@ const Userinfo = ({ userName = 'Alex ', accountType = 'Premium Account' }) => {
               fill="#030229"
             />
           </svg>
-        </a>
+        </div>
       </div>
     </div>
   )

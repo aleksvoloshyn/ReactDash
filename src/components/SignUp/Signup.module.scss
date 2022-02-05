@@ -6,9 +6,14 @@
 .imageBlock {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding-top: 342px;
+  // padding-top: 342px;
   padding-bottom: 342px;
   padding-left: 164px;
   padding-right: 134px;
+}
+
+.testingBlock {
+  margin-bottom: 100px;
 }
