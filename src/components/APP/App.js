@@ -2,10 +2,10 @@
 
 // import FilteredArrayForm from './../FilteredArrayForm'
 import { Routes, Route } from 'react-router-dom'
-import Container from '../components/Container'
-import Navbar from '../components/Navbar'
-import Board from '../components/Board'
-import Signup from '../components/SignUp/Signup'
+import Container from '../Container'
+import Navbar from '../Navbar'
+import Board from '../Board'
+import Signup from '../SignUp/Signup'
 
 import s from './App.module.scss'
 

@@ -1,13 +1,15 @@
 .header {
   // border: 1px solid khaki;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
   margin-bottom: 30px;
 
   .header__title {
+    align-items: center;
     font-weight: bold;
-    font-size: 24px;
+    // font-size: 24px;
+    color: lightsteelblue;
     line-height: 1.4;
   }
 }

@@ -1,0 +1,19 @@
+.pictures {
+  .pictures__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .pictures__list__item {
+      width: 30%;
+      margin-bottom: 30px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.pictures__list__image {
+  width: 90%;
+  height: 160px;
+}
