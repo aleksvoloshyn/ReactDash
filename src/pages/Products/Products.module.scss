@@ -1,0 +1,21 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products__list {
+  display: flex;
+  flex-wrap: wrap;
+  .products__list__item {
+    width: 30%;
+    margin: 10px;
+  }
+}
+.products__list__img {
+  width: 260px;
+  height: 400px;
+}
+
+.products__list_descr {
+  font-weight: 900;
+}

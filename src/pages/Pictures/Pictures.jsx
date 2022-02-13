@@ -1,40 +1,35 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { ToastContainer, toast } from 'react-toastify'
 import Header from './../../components/Board/Header/Header'
-import 'react-toastify/dist/ReactToastify.css'
-
-import { Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 import Loader from '../../utils/Loader'
-// import fetchArticlesWithQuery from '../../services/articlesApi'
 import fetchPicturesWithQuery from '../../services/picturesApi'
+
+import 'react-toastify/dist/ReactToastify.css'
+import { Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import s from './Pictures.module.scss'
 
 const Pictures = () => {
   const [pictures, setPictures] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
   const [searchRequest, setSearchRequest] = useState('')
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState()
 
-  console.log(pictures)
-  console.log(page)
+  const isFirstRun = useRef(true)
+  useEffect(() => {
+    if (isFirstRun.current) {
+      isFirstRun.current = false
+      return
+    }
+    if (pictures.length === 0) {
+      showMessage()
+    }
+  }, [pictures])
 
-  //   useEffect(() => {
-  //   }, [])
-
-  const loadMoreHandler = () => {
-    console.log(page)
-    setPage(page + 1)
-    fetchPicturesWithQuery(searchRequest, page).then((data) =>
-      setPictures([...pictures, ...data])
-    )
-  }
-
-  const onChangeInput = (e) => {
-    setSearchRequest(' ')
-    setSearchRequest(e.target.value)
+  const showMessage = () => {
+    toast.error('По вашему запросу - НИЧЕГО НЕ НАЙДЕНО!')
   }
 
   const onFormSubmit = (e) => {
@@ -46,7 +41,29 @@ const Pictures = () => {
 
     fetchPicturesWithQuery(searchRequest)
       .then(setPage(1))
-      .then((data) => setPictures(data))
+      .then((data) => {
+        setPictures(data)
+      })
+
+      .catch((error) => setError(error))
+  }
+
+  const loadMoreHandler = () => {
+    setPage((prev) => prev + 1)
+
+    fetchPicturesWithQuery(searchRequest, page)
+      .then((data) => {
+        setIsLoading(true)
+        setPictures([...pictures, ...data])
+        setIsLoading(false)
+      })
+
+      .catch((error) => setError(error))
+  }
+
+  const onChangeInput = (e) => {
+    setSearchRequest(' ')
+    setSearchRequest(e.target.value)
   }
 
   return (

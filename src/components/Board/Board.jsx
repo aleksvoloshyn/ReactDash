@@ -5,6 +5,7 @@ import Analytics from '../../pages/Analytics'
 // import FilteredArrayForm from './../..//FilteredArrayForm'
 import Forms from '../../pages/Forms'
 import Pictures from '../../pages/Pictures'
+import Products from '../../pages/Products'
 
 import s from './Board.module.scss'
 
@@ -18,6 +19,7 @@ const Board = () => {
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/forms" element={<Forms />}></Route>
         <Route path="/pictures" element={<Pictures />}></Route>
+        <Route path="/products" element={<Products />}></Route>
       </Routes>
     </main>
   )
