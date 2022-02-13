@@ -5,6 +5,7 @@ import s from './Menu.module.scss'
 
 const menuItems = [
   { id: 1, title: 'dashboard' },
+  { id: 8, title: 'todolist' },
   { id: 10, title: 'pictures' },
   { id: 13, title: 'products' },
   { id: 12, title: 'phonebook' },
@@ -14,7 +15,6 @@ const menuItems = [
   { id: 5, title: 'calendar' },
   { id: 6, title: 'messages' },
   { id: 7, title: 'notification' },
-  { id: 8, title: 'todolist' },
   { id: 9, title: 'forms' },
 
   { id: 11, title: 'setting' },

@@ -1,0 +1,15 @@
+.todoItem {
+  display: flex;
+  justify-content: center;
+  margin: 6px;
+}
+
+.listGroupItem {
+  width: 600px;
+}
+
+.listGroupItemDone {
+  width: 78%;
+  color: salmon;
+  text-decoration: line-through;
+}

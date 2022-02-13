@@ -8,6 +8,7 @@ import Pictures from '../../pages/Pictures'
 import Products from '../../pages/Products'
 
 import s from './Board.module.scss'
+import Todolist from '../../pages/Todolist'
 
 const Board = () => {
   return (
@@ -17,6 +18,7 @@ const Board = () => {
         <Route path="/" element={<Dashboard />}></Route>
         <Route path="/analytics" element={<Analytics />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/todolist" element={<Todolist />}></Route>
         <Route path="/forms" element={<Forms />}></Route>
         <Route path="/pictures" element={<Pictures />}></Route>
         <Route path="/products" element={<Products />}></Route>

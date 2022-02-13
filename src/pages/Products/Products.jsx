@@ -1,15 +1,15 @@
-import { useEffect, useState, useRef } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import { ToastContainer, toast } from 'react-toastify'
+// import { useEffect, useState, useRef } from 'react'
+// import { v4 as uuidv4 } from 'uuid'
+// import { ToastContainer, toast } from 'react-toastify'
 import Header from '../../components/Board/Header/Header'
-import Loader from '../../utils/Loader'
+// import Loader from '../../utils/Loader'
 import item from '../../utils/output_file.jsx'
 
 import 'react-toastify/dist/ReactToastify.css'
-import { Form, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import s from './Products.module.scss'
-console.log(item)
+// console.log(item)
 const Products = () => {
   return (
     <div className={s.products}>
@@ -18,23 +18,41 @@ const Products = () => {
         {item.item.map((item) => {
           return (
             <li key={item.id} className={s.products__list__item}>
-              <img
-                src={item.image_link}
-                alt={item.title}
-                width="260px"
-                className={s.products__list__img}
-              />
-              <p className={s.products__list_descr}>Название: </p>
-              {item.title}
-              <p className={s.products__list_descr}>Описание:</p>{' '}
-              {item.description}
-              <p className={s.products__list_descr}>Размер:</p> {item.size}
-              <p className={s.products__list_descr}>Бренд: </p>
-              {item.brand}
-              <p className={s.products__list_descr}>Цвет: </p>
-              {item.color}
-              <p className={s.products__list_descr}>Цена: </p>
-              {item.price}
+              <Card
+                // style={{ width: '18rem' }}
+                className={s.products__list__card}
+              >
+                <Card.Img
+                  variant="top"
+                  src={item.image_link}
+                  className={s.products__list__img}
+                />
+                <Card.Body>
+                  <Card.Title> {item.title}</Card.Title>
+                  <Card.Text>
+                    <>
+                      Цена: <b>{item.price}</b>
+                    </>
+                  </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem></ListGroupItem>
+                  <ListGroupItem>{item.description}</ListGroupItem>
+                  <ListGroupItem>
+                    <p>Размер:</p> {item.size}
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    <p>Бренд:</p> {item.brand}
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    <p>Цвет:</p> {item.color}
+                  </ListGroupItem>
+                </ListGroup>
+                {/* <Card.Body>
+                  <Card.Link href="#">Card Link</Card.Link>
+                  <Card.Link href="#">Another Link</Card.Link>
+                </Card.Body> */}
+              </Card>
             </li>
           )
         })}
