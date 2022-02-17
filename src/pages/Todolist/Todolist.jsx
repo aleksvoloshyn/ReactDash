@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import Header from './../../components/Board/Header/Header'
 import SearchBar from './../../components/Board/Todo/SearchBar/SearchBar'
 import Filter from '../../components/Board/Todo/Filter'
@@ -90,6 +91,12 @@ const Todolist = () => {
       />
     </div>
   )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    value: state.todolist.value,
+  }
 }
 
 export default Todolist
