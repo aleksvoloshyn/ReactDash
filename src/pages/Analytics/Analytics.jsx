@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import * as actions from '../../redux/actions'
+import * as actions from '../../redux/counter/counter-actions'
 import Controls from './Controls'
 import s from './Analytics.module.scss'
 const Analytics = ({ value, onincrement, ondecrement, step }) => {

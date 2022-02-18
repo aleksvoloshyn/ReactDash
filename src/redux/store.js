@@ -1,38 +1,11 @@
-import { createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
+import logger from 'redux-logger'
+import counterReducer from './counter/counter-reducer'
 
-const initialState = {
-  counter: {
-    value: 0,
-    step: 15,
-  },
-  todolist: {
-    value: '',
-  },
-}
-
-const reducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case 'conter/Increment':
-      return {
-        ...state,
-        counter: {
-          ...state.counter,
-          value: state.counter.value + payload,
-        },
-      }
-    case 'conter/Decrement':
-      return {
-        ...state,
-        counter: {
-          ...state.counter,
-          value: state.counter.value - payload,
-        },
-      }
-    default:
-      return state
-  }
-}
-
-const store = createStore(reducer)
+const store = configureStore({
+  reducer: { counter: counterReducer },
+  devTools: process.env.NODE_ENV === 'development',
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+})
 
 export default store
